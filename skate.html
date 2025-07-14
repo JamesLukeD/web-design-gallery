@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <style>
+
+    body {
+        padding: 0%;
+        margin: 0%;
+    }
+
       /* Navigation Section */
 
       .menu {
@@ -30,9 +36,15 @@
       }
 
       nav ul li a {
-        text-decoration: none;
         color: white;
-        font-weight: bold;
+        text-decoration: none;
+        padding: 0.5rem;
+        transition: background 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #002820; /* darker than #004030 */
+        border-radius: 4px;
       }
 
       .cta a {
@@ -67,55 +79,94 @@
         border-radius: 5px;
       }
 
+      .button:hover {
+        background-color: #002820; /* darker than #004030 */
+        border-radius: 4px;
+      }
+
       /* Product Layout Cards */
 
       .products {
         background: #002b23;
         color: white;
         padding: 3rem 1rem;
+        text-align: center;
       }
 
       .container {
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
-      .product-grid {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        margin-top: 2rem;
+      .slider-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slider-track {
+        display: flex;
+        gap: 1rem;
+        transition: transform 0.4s ease;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        padding: 2rem 0;
       }
 
       .product-card {
-        background: #dcd0a8;
-        padding: 1rem;
-        border-radius: 10px;
-        text-align: center;
+        flex: 0 0 250px;
+        background: #e6d4a0;
         color: black;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .product-card:hover {
-        transform: translateY(-5px);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
       .product-card img {
-        max-width: 100%;
-        height: 200px;
+        width: 100%;
+        height: 180px;
         object-fit: cover;
-        border-radius: 6px;
+        border-radius: 5px;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        color: #002b23;
+        border: none;
+        font-size: 2rem;
+        padding: 0.3rem 0.7rem;
+        cursor: pointer;
+        z-index: 2;
+        border-radius: 5px;
+      }
+
+      #nextBtn {
+        right: 10px;
       }
 
       /* Testimonials */
 
-      .testimonials {
-        background: #FFF9E5;
+      .testimonials h2 {
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: xx-large;
+
+      }
+
+      .testimonials p {
         color: white;
+      }
+
+      .testimonials {
+        background: #fff9e5;
+        color: black;
         padding: 4rem 1rem;
         text-align: center;
       }
+
 
       .testimonial-grid {
         display: flex;
@@ -207,61 +258,56 @@
     <section class="products">
       <div class="container">
         <h2>New Arrivals</h2>
-        <div class="product-grid">
-          <div class="product-card">
-            <img
-              src="assets/skateboardShop/pexels-messalaciulla-1018484.jpg"
-              alt="Pro Deck"
-            />
-            <h3>Pro Deck</h3>
-            <p>£100.00</p>
+
+        <div class="slider-wrapper">
+          <button id="prevBtn" class="arrow">&#10094;</button>
+
+          <div class="slider-track" id="sliderTrack">
+            <div class="product-card">
+              <img
+                src="assets/skateboardShop/pexels-messalaciulla-1018484.jpg"
+                alt="Pro Deck"
+              />
+              <h3>Pro Deck</h3>
+              <p>£100.00</p>
+            </div>
+            <div class="product-card">
+              <img
+                src="assets/skateboardShop/pexels-salvio-bhering-11668-58729.jpg"
+                alt="Street Cruiser"
+              />
+              <h3>Street Cruiser</h3>
+              <p>£85.00</p>
+            </div>
+            <div class="product-card">
+              <img
+                src="assets/skateboardShop/pexels-wendywei-1656306.jpg"
+                alt="Longboard Classic"
+              />
+              <h3>Longboard Classic</h3>
+              <p>£120.00</p>
+            </div>
+
+            <div class="product-card">
+              <img
+                src="assets/skateboardShop/pexels-chloekalaartist-1004656.jpg"
+                alt="Pro Deck"
+              />
+              <h3>Pro Deck</h3>
+              <p>£100.00</p>
+            </div>
+
+            <div class="product-card">
+              <img
+                src="assets/skateboardShop/pexels-lucas-macario-919315-1891724.jpg"
+                alt="Pro Deck"
+              />
+              <h3>Pro Deck</h3>
+              <p>£100.00</p>
+            </div>
           </div>
 
-          <div class="product-card">
-            <img
-              src="assets/skateboardShop/pexels-salvio-bhering-11668-58729.jpg"
-              alt="Street Cruiser"
-            />
-            <h3>Street Cruiser</h3>
-            <p>£85.00</p>
-          </div>
-
-          <div class="product-card">
-            <img
-              src="assets/skateboardShop/pexels-wendywei-1656306.jpg"
-              alt="Longboard Classic"
-            />
-            <h3>Longboard Classic</h3>
-            <p>£120.00</p>
-          </div>
-
-                   <div class="product-card">
-            <img
-              src="assets/skateboardShop/pexels-messalaciulla-1018484.jpg"
-              alt="Pro Deck"
-            />
-            <h3>Pro Deck</h3>
-            <p>£100.00</p>
-          </div>
-
-          <div class="product-card">
-            <img
-              src="assets/skateboardShop/pexels-salvio-bhering-11668-58729.jpg"
-              alt="Street Cruiser"
-            />
-            <h3>Street Cruiser</h3>
-            <p>£85.00</p>
-          </div>
-
-          <div class="product-card">
-            <img
-              src="assets/skateboardShop/pexels-wendywei-1656306.jpg"
-              alt="Longboard Classic"
-            />
-            <h3>Longboard Classic</h3>
-            <p>£120.00</p>
-          </div>
-
+          <button id="nextBtn" class="arrow">&#10095;</button>
         </div>
       </div>
     </section>
@@ -295,7 +341,20 @@
     <footer>
       <p>@ 2025 Skateboard Shop</p>
     </footer>
+    <script>
+      const track = document.getElementById("sliderTrack");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
 
-    <section></section>
+      const scrollAmount = 300;
+
+      nextBtn.addEventListener("click", () => {
+        track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+
+      prevBtn.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>
