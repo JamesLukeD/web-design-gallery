@@ -3,9 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Skateboard shop with boards, gear, and accessories."
+    />
+    <meta
+      name="keywords"
+      content="skateboard, longboard, deck, cruiser, gear"
+    />
+    <meta name="author" content="James Dagless" />
+
     <title>Contact Form</title>
+    <link
+      rel="icon"
+      href="assets/favicon_io/favicon-16x16.png"
+      type="image/x-icon"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
+        font-family: "Urbanist", sans-serif;
         padding: 0%;
         margin: 0%;
       }
@@ -55,11 +81,44 @@
         font-weight: bold;
       }
 
-      /* Hero Section */
+      /* Nav Hamburger */
 
+      .hamburger {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+          background: #004030;
+          padding: 1rem;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          display: none;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .menu {
+          position: relative;
+        }
+      }
+
+      /* Hero Section */
       .hero {
         text-align: center;
-        padding: 4rem 1rem;
+        padding: 1rem 1rem;
         background-color: #4a9782;
         color: white;
       }
@@ -68,7 +127,14 @@
         font-size: 2.5rem;
       }
 
-      .button {
+      .menu {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .button,
+      .add-to-cart {
         display: inline-block;
         margin-top: 1rem;
         background-color: #004030;
@@ -76,17 +142,20 @@
         padding: 0.75rem 1.5rem;
         text-decoration: none;
         border-radius: 5px;
+        transition: all 0.3s ease;
       }
 
-      .button:hover {
+      .button:hover,
+      .add-to-cart:hover {
         background-color: #002820; /* darker than #004030 */
         border-radius: 4px;
+        transform: scale(1.05);
       }
 
       /* Sliding Hero */
 
       .sliding-hero {
-        height: 400px;
+        height: 450px;
         background-size: cover;
         background-position: center;
         display: flex;
@@ -145,6 +214,8 @@
       .slider-wrapper {
         position: relative;
         overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
       }
 
       .slider-track {
@@ -164,6 +235,7 @@
         padding: 1rem;
         text-align: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .product-card img {
@@ -171,6 +243,11 @@
         height: 180px;
         object-fit: cover;
         border-radius: 5px;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
       .arrow {
@@ -241,6 +318,10 @@
       /* News Letter */
 
       .newsletter {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
         background: #f0f0f0;
         text-align: center;
         padding: 3rem 1rem;
@@ -250,6 +331,11 @@
         padding: 0.5rem;
         width: 250px;
         max-width: 80%;
+      }
+
+      .newsletter input,
+      .newsletter button {
+        height: 2.5rem;
       }
 
       .newsletter button {
@@ -294,15 +380,19 @@
 
     <div class="menu">
       <div class="logo">
-        <h3>Skateboard Shop</h3>
+        <h3>Unplugged Skateboards <img src="assets/favicon_io/favicon-32x32.png" alt="unplugged favicon"></h3>
       </div>
-      <nav>
+
+      <div class="hamburger" id="hamburger">&#9776;</div>
+
+      <nav id="navMenu">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Shop</a></li>
           <li><a href="#">About</a></li>
         </ul>
       </nav>
+
       <div class="cta">
         <a href="#">We are Hiring!</a>
       </div>
@@ -311,7 +401,7 @@
     <!-- Hero section -->
 
     <section class="hero">
-      <h1>Welcome to the Skateboard Shop</h1>
+      <h1>Welcome to Uplugged Skateboard Shop</h1>
       <p>Check out our boards, gear and more.</p>
       <a href="#" class="button">Shop Now</a>
     </section>
@@ -334,47 +424,52 @@
           <button id="prevBtn" class="arrow">&#10094;</button>
 
           <div class="slider-track" id="sliderTrack">
-            <div class="product-card">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
               <img
                 src="assets/skateboardShop/pexels-messalaciulla-1018484.jpg"
                 alt="Pro Deck"
               />
               <h3>Pro Deck</h3>
               <p>£100.00</p>
+              <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
               <img
                 src="assets/skateboardShop/pexels-salvio-bhering-11668-58729.jpg"
                 alt="Street Cruiser"
               />
               <h3>Street Cruiser</h3>
               <p>£85.00</p>
+              <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
               <img
                 src="assets/skateboardShop/pexels-wendywei-1656306.jpg"
                 alt="Longboard Classic"
               />
               <h3>Longboard Classic</h3>
               <p>£120.00</p>
+              <button class="add-to-cart">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
               <img
                 src="assets/skateboardShop/pexels-chloekalaartist-1004656.jpg"
                 alt="Pro Deck"
               />
               <h3>Pro Deck</h3>
               <p>£100.00</p>
+              <button class="add-to-cart">Add to Cart</button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
               <img
                 src="assets/skateboardShop/pexels-lucas-macario-919315-1891724.jpg"
                 alt="Pro Deck"
               />
               <h3>Pro Deck</h3>
               <p>£100.00</p>
+              <button class="add-to-cart">Add to Cart</button>
             </div>
           </div>
 
@@ -445,6 +540,20 @@
 
       updateHeroBackground(); // Set initial image
       setInterval(updateHeroBackground, 5000); // Switch every 5 sec
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init();
+      });
+    </script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu").querySelector("ul");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
