@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <style>
-
-    body {
+      body {
         padding: 0%;
         margin: 0%;
-    }
+      }
 
       /* Navigation Section */
 
@@ -84,6 +83,51 @@
         border-radius: 4px;
       }
 
+      /* Sliding Hero */
+
+      .sliding-hero {
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 2rem;
+        color: white;
+        position: relative;
+      }
+
+      .sliding-text {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 400px;
+        text-align: right;
+      }
+
+      .sliding-text h2 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .sliding-text span {
+        color: #b59f6a;
+      }
+
+      .promo-btn {
+        background-color: #004030;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+        display: inline-block;
+      }
+
+      .promo-btn:hover {
+        background-color: #002820;
+      }
+
       /* Product Layout Cards */
 
       .products {
@@ -143,6 +187,10 @@
         border-radius: 5px;
       }
 
+      #prevBtn {
+        left: 10px;
+      }
+
       #nextBtn {
         right: 10px;
       }
@@ -151,9 +199,7 @@
 
       .testimonials h2 {
         color: black;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: xx-large;
-
+        font-size: x-large;
       }
 
       .testimonials p {
@@ -166,7 +212,6 @@
         padding: 4rem 1rem;
         text-align: center;
       }
-
 
       .testimonial-grid {
         display: flex;
@@ -224,6 +269,24 @@
         background-color: black;
         color: white;
       }
+
+      /* Mobile Responsive */
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .sliding-text {
+          max-width: 90%;
+          padding: 1rem;
+        }
+
+        .menu {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -251,6 +314,14 @@
       <h1>Welcome to the Skateboard Shop</h1>
       <p>Check out our boards, gear and more.</p>
       <a href="#" class="button">Shop Now</a>
+    </section>
+
+    <!-- Sliding Promo Hero Section -->
+    <section class="sliding-hero" id="promoHero">
+      <div class="sliding-text">
+        <h2>All Complete <span>Skateboards</span> On Sale!</h2>
+        <a href="#" class="promo-btn">Shop Complete Skateboards</a>
+      </div>
     </section>
 
     <!-- Product Layout Cards-->
@@ -339,7 +410,7 @@
     <!-- Footer -->
 
     <footer>
-      <p>@ 2025 Skateboard Shop</p>
+      <p>© 2025 Skateboard Shop - Rights Reserved James Dagless</p>
     </footer>
     <script>
       const track = document.getElementById("sliderTrack");
@@ -355,6 +426,25 @@
       prevBtn.addEventListener("click", () => {
         track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
       });
+    </script>
+
+    <script>
+      const slidingHero = document.getElementById("promoHero");
+      const heroImages = [
+        "assets/skateboardShop/pexels-chloekalaartist-1004656.jpg",
+        "assets/skateboardShop/pexels-messalaciulla-1018484.jpg",
+        "assets/skateboardShop/pexels-messalaciulla-1018484.jpg",
+      ];
+
+      let current = 0;
+
+      function updateHeroBackground() {
+        slidingHero.style.backgroundImage = `url('${heroImages[current]}')`;
+        current = (current + 1) % heroImages.length;
+      }
+
+      updateHeroBackground(); // Set initial image
+      setInterval(updateHeroBackground, 5000); // Switch every 5 sec
     </script>
   </body>
 </html>
