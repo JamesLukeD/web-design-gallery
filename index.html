@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <style>
-
-        /* Navigation Section */
+      /* Navigation Section */
 
       .menu {
         display: flex;
@@ -45,12 +44,13 @@
         font-weight: bold;
       }
 
-      /* Hero Section */ 
+      /* Hero Section */
 
       .hero {
         text-align: center;
         padding: 4rem 1rem;
-        background-color: #4A9782;
+        background-color: #4a9782;
+        color: white;
       }
 
       .hero h1 {
@@ -67,10 +67,115 @@
         border-radius: 5px;
       }
 
+      /* Product Layout Cards */
+
+      .products {
+        background: #002b23;
+        color: white;
+        padding: 3rem 1rem;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .product-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-top: 2rem;
+      }
+
+      .product-card {
+        background: #dcd0a8;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        color: black;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-card img {
+        max-width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      /* Testimonials */
+
+      .testimonials {
+        background: #FFF9E5;
+        color: white;
+        padding: 4rem 1rem;
+        text-align: center;
+      }
+
+      .testimonial-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .testimonial-card {
+        background: #014332;
+        padding: 1.5rem;
+        border-radius: 10px;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        font-style: italic;
+      }
+
+      .testimonial-card span {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+        font-style: normal;
+        color: #b5e4d4;
+      }
+
+      /* News Letter */
+
+      .newsletter {
+        background: #f0f0f0;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .newsletter input {
+        padding: 0.5rem;
+        width: 250px;
+        max-width: 80%;
+      }
+
+      .newsletter button {
+        padding: 0.5rem 1rem;
+        margin-left: 1rem;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Footer */
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: black;
+        color: white;
+      }
     </style>
   </head>
   <body>
-
     <!-- Navigation -->
 
     <div class="menu">
@@ -92,22 +197,104 @@
     <!-- Hero section -->
 
     <section class="hero">
-        <h1>Welcome to the Skateboard Shop</h1>
-        <p>Check out our boards, gear and more.</p>
-        <a href="#" class="button">Shop Now</a>
+      <h1>Welcome to the Skateboard Shop</h1>
+      <p>Check out our boards, gear and more.</p>
+      <a href="#" class="button">Shop Now</a>
     </section>
 
     <!-- Product Layout Cards-->
 
     <section class="products">
+      <div class="container">
         <h2>New Arrivals</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="" alt="">
-                
-            </div>
+          <div class="product-card">
+            <img
+              src="assets/skateboardShop/pexels-messalaciulla-1018484.jpg"
+              alt="Pro Deck"
+            />
+            <h3>Pro Deck</h3>
+            <p>£100.00</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="assets/skateboardShop/pexels-salvio-bhering-11668-58729.jpg"
+              alt="Street Cruiser"
+            />
+            <h3>Street Cruiser</h3>
+            <p>£85.00</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="assets/skateboardShop/pexels-wendywei-1656306.jpg"
+              alt="Longboard Classic"
+            />
+            <h3>Longboard Classic</h3>
+            <p>£120.00</p>
+          </div>
+
+                   <div class="product-card">
+            <img
+              src="assets/skateboardShop/pexels-messalaciulla-1018484.jpg"
+              alt="Pro Deck"
+            />
+            <h3>Pro Deck</h3>
+            <p>£100.00</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="assets/skateboardShop/pexels-salvio-bhering-11668-58729.jpg"
+              alt="Street Cruiser"
+            />
+            <h3>Street Cruiser</h3>
+            <p>£85.00</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="assets/skateboardShop/pexels-wendywei-1656306.jpg"
+              alt="Longboard Classic"
+            />
+            <h3>Longboard Classic</h3>
+            <p>£120.00</p>
+          </div>
+
         </div>
+      </div>
     </section>
+
+    <!-- Testimonials -->
+
+    <section class="testimonials">
+      <h2>What Skaters Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"Best deck I've ever owned. 10/10"</p>
+          <span>– Jake, London</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"Got my board 2 days ago. Looks sick!"</p>
+          <span>– Sam, Bristol</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Letter -->
+
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <input type="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+      <p>@ 2025 Skateboard Shop</p>
+    </footer>
 
     <section></section>
   </body>
