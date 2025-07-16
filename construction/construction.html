@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FCP constructions Future Constructions Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Base Reset */
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fdfdfd;
+      }
+
+      /* Navigation */
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: #2b2b2b; /* Dark neutral */
+        color: #fff;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        padding: 0.5rem;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        color: #f5a623; /* Highlight on hover */
+      }
+
+      .cta a {
+        background: #d9514e;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .cta a:hover {
+        background-color: #9b4242;
+      }
+
+      /* Hero Section */
+      .sliding-hero {
+        height: 450px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: #fff;
+        position: relative;
+      }
+
+      .sliding-text {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .sliding-text h2 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .sliding-text span {
+        color: #f5a623;
+      }
+
+      .promo-btn {
+        background-color: #f5a623;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 2rem;
+        display: inline-block;
+        font-weight: bold;
+      }
+
+      .promo-btn:hover {
+        background-color: #d9514e;
+      }
+
+      /* Services Section */
+      .services {
+        padding: 4rem 2rem;
+        background: #fcfcf7; /* Soft neutral */
+        text-align: center;
+      }
+
+      .services h2 {
+        font-size: 2.5rem;
+        color: #2b2b2b;
+        margin-bottom: 2rem;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .service-card h3 {
+        margin-top: 0;
+        color: #d9514e;
+      }
+
+      .service-card p {
+        color: #444;
+      }
+
+      .service-card:hover {
+        background: #f5a623;
+        transform: translateY(-5px);
+        color: white;
+      }
+
+      .service-card:hover h3,
+      .service-card:hover p {
+        color: white;
+      }
+
+      /* Why Choose Us */
+      .why-choose-us {
+        padding: 4rem 2rem;
+        background: #ffffff;
+        text-align: center;
+      }
+
+      .why-choose-us h2 {
+        font-size: 2.5rem;
+        color: #2b2b2b;
+        margin-bottom: 2rem;
+      }
+
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+      }
+
+      .reason {
+        background: #fdf7e3;
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .reason h3 {
+        color: #f5a623;
+        margin-bottom: 0.5rem;
+      }
+
+      .reason p {
+        color: #333;
+      }
+
+      .reason:hover {
+        transform: translateY(-5px);
+        background: #f5a623;
+      }
+
+      .reason:hover h3,
+      .reason:hover p {
+        color: white;
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: #2b2b2b;
+        color: #fff;
+        padding: 3rem 2rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .footer-column h3,
+      .footer-column h4 {
+        margin-bottom: 1rem;
+        color: #f5a623;
+      }
+
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-column a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer-column a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1rem;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <div class="menu">
+      <div class="logo">
+        <h2>FCP Constructions</h2>
+      </div>
+
+      <div class="hamburger" id="hamburger"></div>
+
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <a href="#">Contact Us Today!</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+
+    <section class="sliding-hero" id="promoHero">
+      <div class="sliding-text">
+        <h2>Check Out Our <span>Testimonials</span></h2>
+        <a href="#" class="promo-btn">Get a Quote Today!</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Residential Builds</h3>
+          <p>High-quality homes built to last.</p>
+        </div>
+        <div class="service-card">
+          <h3>Commercial Projects</h3>
+          <p>We handle everything from offices to retail units.</p>
+        </div>
+        <div class="service-card">
+          <h3>Renovations</h3>
+          <p>Upgrade your space with professional results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us ?-->
+
+    <section class="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <div class="reasons-grid">
+        <div class="reason">
+          <h3>🏗️ 20+ Years Experience</h3>
+          <p>
+            We’ve been building with precision, quality, and passion for over
+            two decades.
+          </p>
+        </div>
+        <div class="reason">
+          <h3>✅ Fully Certified & Insured</h3>
+          <p>
+            You're in safe hands with full accreditation and comprehensive
+            insurance.
+          </p>
+        </div>
+        <div class="reason">
+          <h3>🛠️ Skilled & Vetted Team</h3>
+          <p>Our tradespeople are experienced, trusted, and reliable.</p>
+        </div>
+        <div class="reason">
+          <h3>⭐ High Client Satisfaction</h3>
+          <p>
+            We pride ourselves on consistent 5-star feedback from happy clients.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>FCP Constructions</h3>
+          <p>
+            Building futures with quality, integrity, and dedication. Based in
+            [Your Location].
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p>Email: info@fcpconstructions.com</p>
+          <p>Phone: +44 1234 567890</p>
+          <p>Mon–Fri: 8am–6pm</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 FCP Constructions. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const slidingHero = document.getElementById("promoHero");
+      const heroImages = [
+        "../assets/construction/pexels-kawserhamid-176342.jpg",
+        "../assets/construction/pexels-rezwan-1216589.jpg",
+        "../assets/construction/pexels-daniel-12255.jpg",
+      ];
+
+      let currentIndex = 0;
+
+      function changeBackground() {
+        slidingHero.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
+        currentIndex = (currentIndex + 1) % heroImages.length;
+      }
+
+      // Change every 5 seconds
+      changeBackground();
+      setInterval(changeBackground, 5000);
+    </script>
+  </body>
+</html>
